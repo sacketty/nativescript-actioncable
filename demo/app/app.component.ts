@@ -1,5 +1,5 @@
 import { Component} from "@angular/core";
-import { ActionCable } from "nativescript-actioncable";
+require("nativescript-actioncable");
 
 @Component({
     selector: "my-app",
@@ -7,9 +7,14 @@ import { ActionCable } from "nativescript-actioncable";
 })
 export class AppComponent {
     public counter: number = 16;
+    room: any;
+    static URL : string = "ws://echo.websocket.org";
+    //static URL : string = "wss://kash-abriva.ngrok.io/cable";
 
     constructor(){
-
+        global.ActionCable.startDebugging();
+        global.cable = global.ActionCable.createConsumer(AppComponent.URL);
+        this.room = subscribe();
     }
 
     public get message(): string {
@@ -22,5 +27,31 @@ export class AppComponent {
     
     public onTap() {
         this.counter--;
+        this.room.speak("Counters left : " + this.counter);
     }
+
+    public onUnsubscribe(){
+        console.log('should unsubscribe....');
+    }
+     
+}
+
+
+function subscribe(){
+
+    var room = global.cable.subscriptions.create("MessagesChannel", {
+        connected: ()=>{
+            console.log("connected to MessageChannel");
+        },
+        diconnected: ()=>{
+            console.log('diconnected from MessageChannel');
+        },
+        received: (data)=>{
+            console.log("received data " + JSON.stringify(data));
+        }
+    })
+    room.speak = (message)=> {
+        return room.perform('speak', {message: message});
+    }
+    return room;
 }
