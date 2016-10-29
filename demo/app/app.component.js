@@ -29,8 +29,7 @@ var AppComponent = (function () {
         global.cable.subscriptions.remove(this.room);
         delete (this.room);
     };
-    //static URL : string = "ws://echo.websocket.org";
-    AppComponent.URL = "wss://kash-abriva.ngrok.io/cable";
+    AppComponent.URL = "ws://echo.websocket.org";
     AppComponent = __decorate([
         core_1.Component({
             selector: "my-app",
