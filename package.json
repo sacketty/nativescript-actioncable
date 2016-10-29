@@ -106,5 +106,5 @@
     "definition": "nativescript-actioncable.d.ts"
   },
   "typings": "typings.d.ts",
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
