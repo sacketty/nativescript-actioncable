@@ -30,7 +30,9 @@ export class AppComponent {
     }
 
     public onUnsubscribe(){
-        console.log('should unsubscribe....');
+        //console.log('should unsubscribe....');
+        global.cable.subscriptions.remove(this.room);
+        delete(this.room);
     }
      
 }
