@@ -1,0 +1,50 @@
+{
+  "name": "nativescript-actioncable",
+  "version": "0.0.1",
+  "description": "A nativescript plugin to use actioncable with iso and android",
+  "nativescript": {
+    "platforms": {
+      "ios": "2.3.0",
+      "android": "2.3.0"
+    }
+  },
+  "files": ["lib","*.js", "*.d.ts"],
+  "directories": {
+    "lib": "lib"
+  },
+  "typings": "typings.d.ts",
+  "typescript": {
+    "definition": "nativescript-actioncable.d.ts"
+  },
+  "dependencies": {
+    "nativescript-websockets": "~1.3.0"
+  },
+  "main": "actioncable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sacketty/nativescript-actioncable.git"
+  },
+  "keywords": [
+    "websocket",
+    "actioncable",
+    "Nativescript"
+  ],
+  "author": {
+    "name": "Henri Sack"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sacketty/nativescript-actioncable/issues"
+  },
+  "homepage": "https://github.com/sacketty/nativescript-actioncable#readme",
+  "readme": "ported actioncable.js forked from https://www.npmjs.com/package/actioncable",
+  "readmeFilename": "ReadMe.md",
+  "_id": "nativescript-actioncable@0.0.1",
+  "_shasum": "0bf19f3dc93750d8f2436513f5f4c0a88c8036cc",
+  "_from": "..",
+  "_resolved": "file:.."
+}

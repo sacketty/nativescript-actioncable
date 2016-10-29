@@ -1,0 +1,1 @@
+ported actioncable.js forked from https://www.npmjs.com/package/actioncable
