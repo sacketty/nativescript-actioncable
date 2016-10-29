@@ -9,7 +9,6 @@ export class AppComponent {
     public counter: number = 16;
     room: any;
     static URL : string = "ws://echo.websocket.org";
-    //static URL : string = "wss://kash-abriva.ngrok.io/cable";
 
     constructor(){
         global.ActionCable.startDebugging();
